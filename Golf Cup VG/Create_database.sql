@@ -10,7 +10,7 @@ CREATE TABLE player (
 )ENGINE=INNODB;
 
 CREATE TABLE jacket (
-	jacket_number INT UNSIGNED UNIQUE AUTO_INCREMENT ,
+	jacket_number INT UNSIGNED ,
 	size VARCHAR(10) NOT NULL,
 	material VARCHAR(50) ,
 	model VARCHAR(50) ,
