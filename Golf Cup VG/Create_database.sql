@@ -10,14 +10,13 @@ CREATE TABLE player (
 )ENGINE=INNODB;
 
 CREATE TABLE jacket (
-	jacket_number INT UNSIGNED ,
 	size VARCHAR(10) NOT NULL,
 	material VARCHAR(50) ,
 	model VARCHAR(50) ,
 	personal_number VARCHAR(13) NOT NULL,
 	FOREIGN KEY (personal_number ) 
 		REFERENCES player (personal_number) ON DELETE CASCADE ON UPDATE CASCADE,
-	PRIMARY KEY (personal_number,jacket_number)
+	PRIMARY KEY (personal_number,material)
 )ENGINE=INNODB;
 
 -- pk is competition name
