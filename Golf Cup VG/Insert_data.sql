@@ -38,11 +38,11 @@ VALUES
     
 INSERT INTO jacket (jacket_number,size,material,model,personal_number)
 VALUES 
-	(1150,"M","fleece","Light jacket","19600521-1234"),
-	(2458,"M","goretex","Heavy jacket","19600521-1234"),
-	(123,"XL","goretex","Rain jacket","19900125-2020"),
-	(104,"S","cotton","Normal jacket","19991111-2288"),
-	(50,"L","fleece","Normal jacket","19890506-2288");
+	("M","fleece","Light jacket","19600521-1234"),
+	("M","goretex","Heavy jacket","19600521-1234"),
+	("XL","goretex","Rain jacket","19900125-2020"),
+	("S","cotton","Normal jacket","19991111-2288"),
+	("L","fleece","Normal jacket","19890506-2288");
     
 INSERT INTO construction (serial_number,hardness)
 VALUES 
