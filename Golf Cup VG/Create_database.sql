@@ -1,3 +1,4 @@
+
 DROP DATABASE Golf_Cup_VG;
 CREATE DATABASE Golf_Cup_VG;
 USE golf_cup_vg;
@@ -9,14 +10,14 @@ CREATE TABLE player (
 )ENGINE=INNODB;
 
 CREATE TABLE jacket (
-	jacket_id INT UNSIGNED UNIQUE AUTO_INCREMENT PRIMARY KEY,
+	jacket_number INT UNSIGNED UNIQUE AUTO_INCREMENT ,
 	size VARCHAR(10) NOT NULL,
 	material VARCHAR(50) ,
 	model VARCHAR(50) ,
 	personal_number VARCHAR(13) NOT NULL,
 	FOREIGN KEY (personal_number ) 
 		REFERENCES player (personal_number) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT uq_jacket UNIQUE(personal_number,model)
+	PRIMARY KEY (personal_number,jacket_number)
 )ENGINE=INNODB;
 
 -- pk is competition name
@@ -44,7 +45,6 @@ CREATE TABLE construction (
 
 
 CREATE TABLE club (
-    club_Id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     club_number INT UNSIGNED,
     material VARCHAR(99),
     personal_number VARCHAR(13) NOT NULL,
@@ -53,7 +53,7 @@ CREATE TABLE club (
 		REFERENCES player (personal_number) ON DELETE CASCADE ON UPDATE CASCADE,
 	FOREIGN KEY (construction_sn)
 		REFERENCES construction (serial_number) ON DELETE CASCADE ON UPDATE CASCADE,
-	CONSTRAINT uq_club UNIQUE(club_number, personal_number)
+    PRIMARY KEY(personal_number,club_number)
 )ENGINE=INNODB;
 
 CREATE TABLE rain (
@@ -73,5 +73,3 @@ CREATE TABLE competition_rain(
 	FOREIGN KEY (rain_id)
         REFERENCES rain(rain_id) ON DELETE CASCADE ON UPDATE CASCADE
 )ENGINE=INNODB;
-
-
